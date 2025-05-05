@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Shah - Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Meet Shah, a skilled Full Stack Developer specializing in React, Node.js, MongoDB, and Tailwind CSS. Explore projects, skills, and contact information.">
+    <meta name="keywords" content="Meet Shah, Full Stack Developer, Portfolio, React, Node.js, MongoDB, Tailwind CSS">
+    <meta property="og:title" content="Meet Shah - Full Stack Developer Portfolio">
+    <meta property="og:description" content="Discover my web development projects and expertise.">
+    <meta property="og:image" content="https://example.com/portfolio-image.jpg">
+    <meta property="og:url" content="https://yourportfolio.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primaryAccent: '#00FFD1',
+                        secondaryAccent: '#8A2BE2'
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-900 text-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-800 bg-opacity-80 backdrop-filter backdrop-blur-lg z-50 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <div class="text-2xl font-bold text-primaryAccent">Meet Shah</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primaryAccent transition-colors duration-200">About</a>
+                <a href="#experience" class="hover:text-primaryAccent transition-colors duration-200">Experience</a>
+                <a href="#projects" class="hover:text-primaryAccent transition-colors duration-200">Projects</a>
+                <a href="#skills" class="hover:text-primaryAccent transition-colors duration-200">Skills</a>
+                <a href="#contact" class="hover:text-primaryAccent transition-colors duration-200">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden flex-col px-2 pb-3 space-y-1 sm:px-3 bg-gray-800 bg-opacity-90">
+            <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-primaryAccent transition-colors duration-200">About</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-primaryAccent transition-colors duration-200">Experience</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-primaryAccent transition-colors duration-200">Projects</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-primaryAccent transition-colors duration-200">Skills</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-700 hover:text-primaryAccent transition-colors duration-200">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with real profile picture -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-gray-800 via-gray-850 to-gray-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+            <!-- Subtle particle animation placeholder (can be added via JS) -->
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in-up z-10 relative">
+            <div class="relative w-32 h-32 md:w-48 md:h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-primaryAccent ring-opacity-50 animate-pulse-glow">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQHUyW5f92Nvjg/profile-displayphoto-shrink_800_800/B4DZaUbmfqGwAc-/0/1746246991104?e=1752105600&v=beta&t=8aOwJja7wRrgkC42X8fQpmyhbW4eY32BYxlaSc5DiJ4" alt="Meet Shah Profile Picture" class="object-cover w-full h-full">
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">Meet Shah</h1>
+            <p class="text-2xl md:text-3xl text-primaryAccent font-semibold mb-6">Full Stack Developer | Master’s in Computer Science</p>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">Creating scalable, user-focused solutions with modern technologies in Los Angeles Metropolitan Area.</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="mailto:meet2506@outlook.com" class="bg-primaryAccent text-gray-900 px-4 py-2 rounded-full hover:bg-secondaryAccent transition-all duration-200">Email Me</a>
+                <a href="tel:714-987-8734" class="bg-secondaryAccent text-white px-4 py-2 rounded-full hover:bg-primaryAccent transition-all duration-200">Call Me</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-800 animate-fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">About Me</h2>
+            <div class="max-w-3xl mx-auto text-gray-300 leading-relaxed">
+                <p class="mb-4">As a seasoned Full Stack Developer with over 5 years of experience, I specialize in creating robust, scalable web applications that prioritize user experience. My expertise spans both front-end and back-end technologies, allowing me to deliver comprehensive solutions.</p>
+                <p class="mb-4">I thrive on transforming complex problems into intuitive, efficient systems. My key technical skills include:</p>
+                <ul class="list-disc list-inside space-y-2 pl-2">
+                    <li><span class="text-primaryAccent">React</span> - Building dynamic, responsive user interfaces</li>
+                    <li><span class="text-primaryAccent">Node.js</span> - Developing powerful server-side applications</li>
+                    <li><span class="text-primaryAccent">MongoDB</span> - Designing efficient NoSQL database architectures</li>
+                    <li><span class="text-primaryAccent">Tailwind CSS</span> - Crafting modern, utility-first styling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section with real data -->
+    <section id="experience" class="py-16 md:py-24 bg-gradient-to-b from-gray-700 to-gray-800 animate-fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Professional Experience</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Current Role -->
+                <div class="bg-gray-600 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-l-4 border-primaryAccent">
+                    <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+                    <p class="text-primaryAccent">Iterate.ai • Feb 2025 – Present, San Jose, CA</p>
+                    <p class="text-gray-300 mt-2">Driving AI innovation for rapid prototyping and enterprise solutions, leveraging ML and full-stack development to deliver user-focused products.</p>
+                </div>
+                <!-- Past Role 1 -->
+                <div class="bg-gray-600 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-l-4 border-secondaryAccent">
+                    <h3 class="text-xl font-semibold text-white">Software Engineer</h3>
+                    <p class="text-primaryAccent">Softvan Pvt Ltd • Feb 2022 – Dec 2022, Ahmedabad, India</p>
+                    <p class="text-gray-300 mt-2">Specialized in AI and ML consulting, developing scalable software solutions that improved efficiency in enterprise environments.</p>
+                </div>
+                <!-- Past Role 2 -->
+                <div class="bg-gray-600 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-l-4 border-primaryAccent">
+                    <h3 class="text-xl font-semibold text-white">Embedded Software Developer</h3>
+                    <p class="text-primaryAccent">iClerisy • Jun 2021 – Jan 2022, Ahmedabad, India</p>
+                    <p class="text-gray-300 mt-2">Focused on EdTech software, implementing embedded systems and AI-driven features to enhance educational tools.</p>
+                </div>
+                <!-- Past Role 3 -->
+                <div class="bg-gray-600 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border-l-4 border-secondaryAccent">
+                    <h3 class="text-xl font-semibold text-white">Technical & Operations Volunteer</h3>
+                    <p class="text-primaryAccent">The Akshaya Patra Foundation • Mar 2018 – Dec 2021, India</p>
+                    <p class="text-gray-300 mt-2">Contributed to digital infrastructure for food and education initiatives, applying software skills to support non-profit operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 md:py-24 bg-gradient-to-b from-gray-800 to-gray-700 animate-fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Education</h2>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="bg-gray-600 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold text-white">MS in Computer Science</h3>
+                    <p class="text-primaryAccent">California State University, Long Beach • 2023 – 2025, Long Beach, CA</p>
+                    <p class="text-gray-300 mt-2">Focused on AI, ML, and software engineering principles.</p>
+                </div>
+                <div class="bg-gray-600 p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-xl font-semibold text-white">BE in Computer Engineering</h3>
+                    <p class="text-primaryAccent">Gujarat Technological University (GTU) • 2015 – 2019, Ahmedabad, India</p>
+                    <p class="text-gray-300 mt-2">Emphasized foundational skills in programming, databases, and system design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 md:py-24 bg-gray-700 animate-fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-gray-600 rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white mb-3">Innovative App</h3>
+                        <p class="text-gray-300 mb-4">A cutting-edge application that revolutionizes user interaction with smart features and intuitive design.</p>
+                        <p class="text-sm text-primaryAccent mb-4">Tech Stack: React, Node.js, MongoDB</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primaryAccent hover:text-secondaryAccent transition-colors duration-200">Live Demo</a>
+                            <a href="#" class="text-primaryAccent hover:text-secondaryAccent transition-colors duration-200">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-gray-600 rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white mb-3">E-commerce Platform</h3>
+                        <p class="text-gray-300 mb-4">A comprehensive online shopping solution with advanced filtering, secure payments, and user management.</p>
+                        <p class="text-sm text-primaryAccent mb-4">Tech Stack: React, Express, Tailwind CSS</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primaryAccent hover:text-secondaryAccent transition-colors duration-200">Live Demo</a>
+                            <a href="#" class="text-primaryAccent hover:text-secondaryAccent transition-colors duration-200">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-gray-600 rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-white mb-3">Productivity Suite</h3>
+                        <p class="text-gray-300 mb-4">An integrated set of tools designed to enhance workflow efficiency and team collaboration.</p>
+                        <p class="text-sm text-primaryAccent mb-4">Tech Stack: Node.js, MongoDB, JavaScript</p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primaryAccent hover:text-secondaryAccent transition-colors duration-200">Live Demo</a>
+                            <a href="#" class="text-primaryAccent hover:text-secondaryAccent transition-colors duration-200">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with grouped skills and animations -->
+    <section id="skills" class="py-16 md:py-24 bg-gradient-to-b from-gray-800 to-gray-700 animate-fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-xl font-semibold text-primaryAccent mb-4">Frontend</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fas fa-react text-3xl text-blue-400 animate-spin-slow group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">React</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fab fa-html5 text-orange-600 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">HTML5</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fab fa-css3-alt text-blue-500 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">CSS3</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fab fa-js-square text-yellow-500 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">JavaScript</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-primaryAccent mb-4">Backend</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fab fa-node-js text-green-500 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">Node.js</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fas fa-database text-green-600 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">MongoDB</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fab fa-python text-blue-400 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">Python</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-primaryAccent mb-4">AI/ML & Tools</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fas fa-brain text-purple-500 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">BERT & LLMs</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fas fa-robot text-red-500 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">ML/AI</p>
+                        </div>
+                        <div class="text-center group p-4 bg-gray-600 rounded-lg shadow hover:shadow-lg transition-shadow duration-300">
+                            <i class="fas fa-tools text-gray-400 animate-fade-in group-hover:text-primaryAccent"></i>
+                            <p class="text-gray-300 mt-2">Tailwind CSS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-700 animate-fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <div>
+                    <p class="text-gray-300 mb-6">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out through any of the platforms below or by using the contact form.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primaryAccent text-gray-900 flex items-center justify-center mr-4">
+                                <span class="text-xl">✉️</span>
+                            </div>
+                            <a href="mailto:meet2506@outlook.com" class="text-gray-300 hover:text-primaryAccent transition-colors duration-200">meet2506@outlook.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primaryAccent text-gray-900 flex items-center justify-center mr-4">
+                                <span class="text-xl">💻</span>
+                            </div>
+                            <a href="https://github.com/meetshah" class="text-gray-300 hover:text-primaryAccent transition-colors duration-200">github.com/meetshah</a>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primaryAccent text-gray-900 flex items-center justify-center mr-4">
+                                <span class="text-xl">🔗</span>
+                            </div>
+                            <a href="https://linkedin.com/in/meet-s-shah" class="text-gray-300 hover:text-primaryAccent transition-colors duration-200">linkedin.com/in/meet-s-shah</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryAccent focus:border-transparent text-gray-100" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryAccent focus:border-transparent text-gray-100" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-300 mb-1">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primaryAccent focus:border-transparent text-gray-100" required></textarea>
+                    </div>
+                    <button type="submit" class="block bg-primaryAccent text-gray-900 font-semibold px-6 py-2 rounded-lg hover:bg-secondaryAccent transition-colors duration-200 mx-auto">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with back-to-top button -->
+    <footer class="py-6 bg-gray-800 text-center text-gray-400 text-sm">
+        <p>&copy; 2025 Meet Shah. All rights reserved.</p>
+        <button id="back-to-top" class="mt-4 bg-primaryAccent text-gray-900 font-semibold px-4 py-2 rounded-lg hover:bg-secondaryAccent transition-colors duration-200">Back to Top</button>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

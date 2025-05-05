@@ -1,0 +1,38 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  from { border-color: transparent; }
+  to { border-color: black; }
+}
+@keyframes blink-alt {
+  0% { border-color: transparent; }
+  50% { border-color: black; }
+  100% { border-color: transparent; }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 5s linear infinite;
+  }
+  .animate-fade-in {
+    animation: fadeIn 2s ease-in;
+  }
+  .animate-typewriter {
+    animation: typewriter 2s steps(40) forwards, blink 0.75s step-end infinite;
+  }
+}
