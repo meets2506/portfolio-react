@@ -10,44 +10,24 @@ import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar'; 
-import Streaming from './components/Streaming';
 import ExtraActivities from './components/ExtraActivities';
 import './index.css';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
 
+  const handleScroll = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
+  };
+
   // Update active section based on scroll position
   useEffect(() => {
     const handleScrollSpy = () => {
-      const sections = ['hero', 'about', 'experience', 'education', 'skills', 'certifications', 'projects', 'resume', 'streaming', 'extra-activities', 'contact']; 
-      
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          
-          // When section is in viewport (with 40% threshold)
-          if (rect.top <= windowHeight * 0.4 && rect.bottom >= windowHeight * 0.4) {
-            if (activeSection !== section) {
-              setActiveSection(section);
-            }
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScrollSpy);
-    return () => {
-      window.removeEventListener('scroll', handleScrollSpy);
-    };
-  }, [activeSection]);
-
-  useEffect(() => {
-    const handleScrollSpy = () => {
-      const sections = ['hero', 'about', 'experience', 'education', 'skills', 'certifications', 'projects', 'resume', 'streaming', 'extra-activities', 'contact']; 
+      const sections = ['hero', 'about', 'experience', 'education', 'skills', 'certifications', 'projects', 'resume', 'extra-activities', 'contact']; 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -63,21 +43,19 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100 font-sans">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Experience />
-        <Education />
-        <Certifications />
-        <Resume />
-        <Streaming />
-        <ExtraActivities />
-        <Contact />
-      </main>
+    <div className="font-sans bg-gray-900 text-white min-h-screen">
+      <Navbar handleScroll={handleScroll} activeSection={activeSection} />
+      <Hero handleScroll={handleScroll} />
+      <About />
+      <Experience />
+      <Education />
+      <Skills />
+      <Certifications />
+      <Projects />
+      <Resume />
+      {/* Removed Streaming Section */}
+      <ExtraActivities />
+      <Contact />
       <Footer />
     </div>
   );

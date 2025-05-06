@@ -1,79 +1,112 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Experience = () => {
-  const experiences = [
-    {
-      id: 1,
-      company: 'Iterate.ai',
-      role: 'AI Developer',
-      period: '2023-Present',
-      description: 'Developed AI models and integrated them into web applications using React and Python, improving system efficiency by 40%.',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOhHWver_g38Vk1lYflEwPu-mfnFG_7UfLeE9jk7V18pmPTqEXggt-MHaU48hZBy094xA&usqp=CAU',
-    },
-    {
-      id: 2,
-      company: 'Softvan',
-      role: 'Software Engineer',
-      period: '2021-2023',
-      description: 'Led full-stack development projects with JavaScript, SQL, and cloud services, focusing on scalable architectures.',
-      image: 'https://media.licdn.com/dms/image/v2/C4E0BAQGOb2t8u_b8xA/company-logo_200_200/company-logo_200_200/0/1631332655292?e=2147483647&v=beta&t=LyrffCVt6Ggp5LRRkfuSewBHiwc_HJH4Mh3Zj-qM3a4',
-    },
-    {
-      id: 3,
-      company: 'iClerisy Solutions',
-      role: 'Embedded Software Developer',
-      period: 'Jun 2021 – Jan 2022',
-      description: 'Developed C/C++ apps for embedded systems and debugged optimizations. Integrated deep learning models for Qualcomm hardware. Enhanced AI application architecture for better efficiency.',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQYHKGegiDkoNRsIlulaNsu7A4ssXcMvPHKg&s',
-    },
-    {
-      id: 4,
-      company: 'Akshay Patra',
-      role: 'Volunteer',
-      period: 'Aug 2019 – Dec 2019',
-      description: 'Assisted in food distribution and event management. Coordinated with team members for smooth operations.',
-      image: 'https://apusa.org/wp-content/uploads/2024/06/590abe54-acab-11ee-b998-0a2cb4d57f7b-1.jpg',
-    },
-  ];
+const experiences = [
+  {
+    company: 'Iterate.ai',
+    title: 'AI Developer Intern',
+    duration: 'Jan 2024 - May 2024',
+    location: 'San Jose, California (Remote)',
+    logo: 'https://drive.google.com/uc?export=view&id=1fP4QZzT5a-rP-wM709kY6-x5A3b7E4eR',
+    description: [
+      'Led development of an AI-powered contract summarization app using Retrieval-Augmented Generation (RAG) and Langchain.',
+      'Integrated Google Gemini Pro LLM for advanced text analysis and OpenAI Whisper API for transcription.',
+      'Developed a full-stack solution with React.js frontend and FastAPI backend, deployed via Docker.',
+      'Implemented robust data handling with Chroma DB and PostgreSQL.',
+      'Secured a $10,000 grant from Google Cloud, optimizing deployment costs.',
+      'Collaborated in Agile sprints, enhancing team productivity.',
+    ],
+  },
+  {
+    company: 'Softvan',
+    title: 'Jr. Software Engineer',
+    duration: 'Jun 2021 - May 2023',
+    location: 'Ahmedabad, Gujarat, India',
+    logo: 'https://drive.google.com/uc?export=view&id=1m_qHk6wQ8qH0O9ZlJ7j_Y3Z-C6jX4L9s',
+    description: [
+      'Developed 20+ projects using Django, React, Node.js, and Python.',
+      'Managed databases (PostgreSQL, MySQL, MongoDB) and deployed on AWS, Heroku, Azure.',
+      'Led a team of 5, boosting project delivery by 25%.',
+      'Achieved 90% client satisfaction through effective communication.',
+    ],
+  },
+  {
+    company: 'iClerisy',
+    title: 'Jr. Associate Software Engineer',
+    duration: 'Oct 2020 - May 2021',
+    location: 'Ahmedabad, Gujarat, India',
+    logo: 'https://drive.google.com/uc?export=view&id=1N-pY2j9gA-T4dK8rL8zXj6vY5W-N1R0c',
+    description: [
+      'Specialized in Python backend development, focusing on API integration and database management.',
+      'Developed web applications using Django, Flask, Python, JavaScript, HTML, CSS.',
+      'Contributed to Odoo ERP customizations, improving workflow efficiency.',
+      'Engaged in code reviews and Agile processes.',
+    ],
+  },
+  {
+    company: 'The Akshaya Patra Foundation',
+    title: 'Software Engineer Intern',
+    duration: 'Aug 2019 - Oct 2019',
+    location: 'Ahmedabad, Gujarat, India',
+    logo: 'https://drive.google.com/uc?export=view&id=1Z-jT6kF-wX8sN9oI-L7vB4xY3T-eR1dA',
+    description: [
+      'Assisted in developing and testing software components for internal applications.',
+      'Gained experience in SQL database interactions and backend support.',
+      'Learned about large-scale application deployment and maintenance.',
+    ],
+  },
+];
 
+const Experience = () => {
   return (
     <motion.section 
       id="experience" 
-      initial="hidden" 
-      whileInView="visible" 
-      viewport={{ once: true }} 
-      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15 } } }} 
-      className="py-16 md:py-24 bg-gray-800"
+      initial={{ opacity: 0, y: 50 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true, amount: 0.2 }} 
+      transition={{ duration: 0.6 }} 
+      className="py-16 px-4 md:px-8 bg-gray-900 text-gray-300"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 
-          variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }} 
-          className="text-3xl md:text-4xl font-bold text-white mb-8 text-center"
-          role="heading" 
-          aria-level="2"
-        >
-          My Experience
-        </motion.h2>
-        <motion.div 
-          className="space-y-8" 
-          variants={{ visible: { transition: { staggerChildren: 0.1 } }}}
-        >
+      <div className="container mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white border-b-2 border-purple-500 pb-2 inline-block mx-auto block w-fit">
+          Work Experience
+        </h2>
+        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-purple-500 before:to-transparent">
           {experiences.map((exp, index) => (
-            <motion.div 
-              key={index} 
-              variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0 } }} 
-              className="flex flex-col md:flex-row items-center bg-gray-700 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+            <motion.div
+              key={index}
+              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true, amount: 0.4 }} 
+              transition={{ duration: 0.5, delay: 0.1 * index }} 
             >
-              {exp.image && <img src={exp.image} alt={exp.company} className="w-24 h-24 object-cover rounded-full mb-4 md:mb-0 md:mr-6" />}
-              <div>
-                <h3 className="text-xl font-bold text-white">{exp.role} at {exp.company}</h3>
-                <p className="text-gray-400">{exp.period}</p>
-                <p className="text-gray-300 mt-2">{exp.description}</p>
+              {/* Icon */}
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-purple-600 shadow-lg absolute left-5 -translate-x-1/2 translate-y-0.5 md:translate-y-0 md:mx-auto md:left-1/2 group-odd:left-auto group-odd:right-1/2 text-white font-bold">
+                {index + 1}
+              </div>
+
+              {/* Card */}
+              <div className="card w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)]">
+                <div className="flex items-center mb-3 space-x-3">
+                  {exp.logo && (
+                    <img src={exp.logo} alt={`${exp.company} Logo`} className="w-10 h-10 rounded-full object-contain bg-white p-1" />
+                  )}
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
+                    <p className="text-purple-400 font-medium">{exp.company}</p>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-400 mb-4">{exp.duration} | {exp.location}</p>
+                <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm">
+                  {exp.description.map((point, i) => (
+                    <li key={i}>{point}</li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

@@ -1,56 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const Streaming = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const title = 'Streaming Projects';
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < title.length) {
+        setDisplayedText(title.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 150);
+    return () => clearInterval(interval);
+  }, [title]);
+
   const streamingProjects = [
     {
       title: 'Live Streaming App',
       description: 'Built a WebRTC-based streaming app with React and AI moderation, allowing real-time video for events and conferences.', 
-      image: 'https://drive.google.com/uc?export=view&id=1vk5lpw9n8mf_72sJh0NCICLRlPan_Nx5' // Use direct link for image loading
+      image: 'https://drive.google.com/uc?export=view&id=1vk5lpw9n8mf_72sJh0NCICLRlPan_Nx5'
     },
     {
       title: 'AI-Enhanced Streaming Platform',
       description: 'Developed a platform using Python and Flask for AI-driven content recommendation in streaming services.'
     },
-    // Add more items as needed
   ];
 
   return (
     <motion.section 
       id="streaming" 
-      initial="hidden" 
-      whileInView="visible" 
-      viewport={{ once: true }} 
-      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.15 } } }} 
-      className="py-16 md:py-24 bg-gray-700"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="py-20 bg-gradient-to-b from-gray-800 to-gray-700 text-gray-100 px-4 sm:px-6 lg:px-8"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-5xl mx-auto text-center">
         <motion.h2 
-          variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }} 
-          className="text-3xl md:text-4xl font-bold text-white mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          className="text-3xl md:text-4xl font-extrabold text-white mb-10"
           role="heading" 
           aria-level="2"
         >
-          Streaming Projects
+          {displayedText}
         </motion.h2>
-        <motion.p 
-          variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
-          className="text-gray-300 mb-6 max-w-2xl mx-auto"
-          transition={{ delay: 0.2 }}
-        >
-          Explore my work in streaming technologies, including live video apps and media streaming projects.
-        </motion.p>
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" 
-          variants={{ visible: { transition: { staggerChildren: 0.15 } }}}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {streamingProjects.map((project, index) => (
             <motion.div 
-              key={index} 
-              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} 
-              className="bg-gray-600 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + index * 0.2, duration: 0.8, ease: "easeOut" }}
+              className="bg-gray-600 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-500"
             >
-              {project.image && <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-t-lg mb-4" />}
+              {project.image && <img src={project.image} alt={project.title} className="w-full h-48 object-cover rounded-t-lg mb-4 border border-gray-500" />}
               <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
               <p className="text-gray-300">{project.description}</p>
             </motion.div>
